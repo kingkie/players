@@ -1,0 +1,10 @@
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\bin\Debug\BroadcastTool.exe.config
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\bin\Debug\BroadcastTool.exe
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\bin\Debug\BroadcastTool.pdb
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.mainFrm.resources
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.Properties.Resources.resources
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.csproj.GenerateResource.cache
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.csproj.CoreCompileInputs.cache
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.exe
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.pdb
+E:\MyProjects\BroadcastPlayerProject\3Coding\BroadcastPlayer\BroadcastTool\obj\Debug\BroadcastTool.csproj.AssemblyReference.cache

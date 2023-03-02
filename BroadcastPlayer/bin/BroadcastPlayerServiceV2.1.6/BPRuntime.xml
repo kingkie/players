@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-16"?>
+<BPRuntime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Devices />
+  <Scents>
+    <string>桂花</string>
+    <string>桃花</string>
+    <string>柠檬</string>
+    <string>混合鼠尾草皮</string>
+  </Scents>
+  <GasCircuitCount>12</GasCircuitCount>
+  <UsingAllDevice>true</UsingAllDevice>
+  <DeviceType>DTE_Wireless_433_CTL</DeviceType>
+  <CurrentDevice>0</CurrentDevice>
+  <BroadcastChannel>0</BroadcastChannel>
+  <BaudRate>115200</BaudRate>
+  <CurrentDeviceChannel>1</CurrentDeviceChannel>
+  <SmellIdFrom>1</SmellIdFrom>
+  <AdjustStep>0</AdjustStep>
+  <AutoServer>false</AutoServer>
+</BPRuntime>

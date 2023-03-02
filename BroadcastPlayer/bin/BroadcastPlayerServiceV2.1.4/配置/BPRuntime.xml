@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-16"?>
+<BPRuntime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Devices>
+    <BPDevice>
+      <DeviceID>2127</DeviceID>
+      <UID>36ff71063450373528271757</UID>
+      <Channel>0</Channel>
+    </BPDevice>
+    <BPDevice>
+      <DeviceID>2036</DeviceID>
+      <UID>36ff6d063450373558261857</UID>
+      <Channel>0</Channel>
+    </BPDevice>
+    <BPDevice>
+      <DeviceID>39960</DeviceID>
+      <UID>56ff6e067877514916470567</UID>
+      <Channel>209</Channel>
+    </BPDevice>
+    <BPDevice>
+      <DeviceID>1</DeviceID>
+      <UID>33ff6e063447313207312457</UID>
+      <Channel>0</Channel>
+    </BPDevice>
+  </Devices>
+  <GasCircuitCount>12</GasCircuitCount>
+  <LastPlayVideo>D:\气味王国\ScentShowForLvmh\ScentShowForLvmh\Res_PG\Videos\content.mp4</LastPlayVideo>
+  <UsingAllDevice>true</UsingAllDevice>
+  <DeviceType>DTE_Wireless_433_CTL</DeviceType>
+  <CurrentDevice>39960</CurrentDevice>
+  <BroadcastChannel>0</BroadcastChannel>
+  <BaudRate>115200</BaudRate>
+  <CurrentDeviceChannel>209</CurrentDeviceChannel>
+  <SmellIdFrom>36</SmellIdFrom>
+  <AdjustStep>0</AdjustStep>
+</BPRuntime>

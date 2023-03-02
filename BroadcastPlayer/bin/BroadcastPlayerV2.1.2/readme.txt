@@ -1,0 +1,1 @@
+配置文件BPRuntime.xml为主要配置文件，打开配置工具BroadcastTool.exe可以配置，可选择备份配置文件。

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ServerConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ServerPort>5214</ServerPort>
+  <ServerIP>192.168.1.79</ServerIP>
+  <VideoList>
+    <VideoInfo>
+      <VideoName>3D-食物大战最终版</VideoName>
+      <VideoAddr>D:\Medias\3D-食物大战最终版.mp4</VideoAddr>
+    </VideoInfo>
+    <VideoInfo>
+      <VideoName>凉凉</VideoName>
+      <VideoAddr>D:\Medias\气味音乐MV2\凉凉.mp4</VideoAddr>
+    </VideoInfo>
+    <VideoInfo>
+      <VideoName>那些花儿</VideoName>
+      <VideoAddr>D:\Medias\气味音乐MV2\那些花儿.mp4</VideoAddr>
+    </VideoInfo>
+    <VideoInfo>
+      <VideoName>今天你要嫁给我</VideoName>
+      <VideoAddr>D:\Medias\气味音乐MV2\今天你要嫁给我.mp4</VideoAddr>
+    </VideoInfo>
+  </VideoList>
+</ServerConfig>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-16"?>
+<BPRuntime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Devices>
+    <BPDevice>
+      <DeviceID>2127</DeviceID>
+      <UID>36ff71063450373528271757</UID>
+      <Channel>0</Channel>
+    </BPDevice>
+  </Devices>
+  <GasCircuitCount>12</GasCircuitCount>
+  <LastPlayVideo>C:\Users\86139\Desktop\天机系统问题梳理\如何提高嗅觉？.mp4</LastPlayVideo>
+  <UsingAllDevice>true</UsingAllDevice>
+  <DeviceType>DTE_Wireless_433_CTL</DeviceType>
+  <CurrentDevice>0</CurrentDevice>
+  <BroadcastChannel>0</BroadcastChannel>
+  <BaudRate>115200</BaudRate>
+  <CurrentDeviceChannel>1</CurrentDeviceChannel>
+  <SmellIdFrom>0</SmellIdFrom>
+</BPRuntime>

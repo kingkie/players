@@ -1,0 +1,6 @@
+BroadcastPlayer/bin/Debug/
+BroadcastPlayer/obj
+.vs/
+*.srt
+*.log
+*.rar
