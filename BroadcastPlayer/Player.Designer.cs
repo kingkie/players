@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TOPmenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Connect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoConnect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,7 @@
             this.Connect_ADP_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DisConnect_ADP_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Reset_config_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Server_config_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ScriptTimer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.g_Min_Btn = new System.Windows.Forms.Button();
@@ -45,13 +47,27 @@
             this.g_Close_Btn = new System.Windows.Forms.Button();
             this.ICON_PB = new System.Windows.Forms.PictureBox();
             this.Title_Label = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.CurrentDeviceLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
+            this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.xPanderPanel2 = new BSE.Windows.Forms.XPanderPanel();
+            this.pnlVideoList = new System.Windows.Forms.Panel();
+            this.tblVideos = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvVideo = new System.Windows.Forms.DataGridView();
+            this.VideoName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.ErrorMSG = new System.Windows.Forms.Label();
             this.WakeUpBTN = new System.Windows.Forms.Button();
             this.CycleCB = new System.Windows.Forms.CheckBox();
@@ -63,11 +79,20 @@
             this.lblCycTimes = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
-            this.Server_config_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             this.TOPmenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICON_PB)).BeginInit();
             this.panel1.SuspendLayout();
+            this.xPanderPanelList1.SuspendLayout();
+            this.xPanderPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.xPanderPanel2.SuspendLayout();
+            this.pnlVideoList.SuspendLayout();
+            this.tblVideos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WMP)).BeginInit();
@@ -110,7 +135,7 @@
             // 
             this.AutoConnect_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.AutoConnect_ToolStripMenuItem.Name = "AutoConnect_ToolStripMenuItem";
-            this.AutoConnect_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.AutoConnect_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.AutoConnect_ToolStripMenuItem.Text = "连遥控器";
             this.AutoConnect_ToolStripMenuItem.Click += new System.EventHandler(this.AutoConnect_ToolStripMenuItem_Click);
             // 
@@ -118,7 +143,7 @@
             // 
             this.CloseSerialPort_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.CloseSerialPort_ToolStripMenuItem.Name = "CloseSerialPort_ToolStripMenuItem";
-            this.CloseSerialPort_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.CloseSerialPort_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.CloseSerialPort_ToolStripMenuItem.Text = "断开连接";
             this.CloseSerialPort_ToolStripMenuItem.Click += new System.EventHandler(this.cloasePort_Click);
             // 
@@ -126,7 +151,7 @@
             // 
             this.ChooseDevice.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.ChooseDevice.Name = "ChooseDevice";
-            this.ChooseDevice.Size = new System.Drawing.Size(180, 26);
+            this.ChooseDevice.Size = new System.Drawing.Size(148, 26);
             this.ChooseDevice.Text = "选择设备";
             this.ChooseDevice.Click += new System.EventHandler(this.ChooseDeviceToolStripMenuItem_Click);
             // 
@@ -134,7 +159,7 @@
             // 
             this.Connect_ADP_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Connect_ADP_ToolStripMenuItem.Name = "Connect_ADP_ToolStripMenuItem";
-            this.Connect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.Connect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.Connect_ADP_ToolStripMenuItem.Text = "连接设备";
             this.Connect_ADP_ToolStripMenuItem.Click += new System.EventHandler(this.Connect_ADP_ToolStripMenuItem_Click);
             // 
@@ -142,7 +167,7 @@
             // 
             this.DisConnect_ADP_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.DisConnect_ADP_ToolStripMenuItem.Name = "DisConnect_ADP_ToolStripMenuItem";
-            this.DisConnect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.DisConnect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.DisConnect_ADP_ToolStripMenuItem.Text = "断开连接";
             this.DisConnect_ADP_ToolStripMenuItem.Click += new System.EventHandler(this.DisConnect_ADP_ToolStripMenuItem_Click);
             // 
@@ -150,9 +175,17 @@
             // 
             this.Reset_config_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Reset_config_ToolStripMenuItem.Name = "Reset_config_ToolStripMenuItem";
-            this.Reset_config_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.Reset_config_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.Reset_config_ToolStripMenuItem.Text = "清除配置";
             this.Reset_config_ToolStripMenuItem.Click += new System.EventHandler(this.Reset_config_ToolStripMenuItem_Click);
+            // 
+            // Server_config_ToolStripMenuItem
+            // 
+            this.Server_config_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.Server_config_ToolStripMenuItem.Name = "Server_config_ToolStripMenuItem";
+            this.Server_config_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
+            this.Server_config_ToolStripMenuItem.Text = "服务配置";
+            this.Server_config_ToolStripMenuItem.Click += new System.EventHandler(this.Server_config_ToolStripMenuItem_Click);
             // 
             // ScriptTimer
             // 
@@ -164,7 +197,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(543, 12);
+            this.button1.Location = new System.Drawing.Point(536, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 43);
             this.button1.TabIndex = 2;
@@ -236,19 +269,6 @@
             this.Title_Label.TabIndex = 8;
             this.Title_Label.Text = "气味播放器-v2.1.1";
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.DarkGray;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 45);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "单路控制";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // CurrentDeviceLabel
             // 
             this.CurrentDeviceLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -267,31 +287,119 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.numericUpDown1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.xPanderPanelList1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(707, 39);
+            this.panel1.Location = new System.Drawing.Point(700, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(193, 561);
+            this.panel1.Size = new System.Drawing.Size(200, 561);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // xPanderPanelList1
+            // 
+            this.xPanderPanelList1.CaptionStyle = BSE.Windows.Forms.CaptionStyle.Normal;
+            this.xPanderPanelList1.Controls.Add(this.xPanderPanel1);
+            this.xPanderPanelList1.Controls.Add(this.xPanderPanel2);
+            this.xPanderPanelList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xPanderPanelList1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xPanderPanelList1.GradientBackground = System.Drawing.Color.Empty;
+            this.xPanderPanelList1.Location = new System.Drawing.Point(0, 0);
+            this.xPanderPanelList1.Name = "xPanderPanelList1";
+            this.xPanderPanelList1.PanelColors = null;
+            this.xPanderPanelList1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
+            this.xPanderPanelList1.ShowBorder = false;
+            this.xPanderPanelList1.Size = new System.Drawing.Size(200, 561);
+            this.xPanderPanelList1.TabIndex = 15;
+            // 
+            // xPanderPanel1
+            // 
+            this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xPanderPanel1.CaptionHeight = 50;
+            this.xPanderPanel1.Controls.Add(this.tableLayoutPanel1);
+            this.xPanderPanel1.CustomColors.BackColor = System.Drawing.SystemColors.Control;
+            this.xPanderPanel1.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.xPanderPanel1.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.Empty;
+            this.xPanderPanel1.CustomColors.CaptionCheckedGradientEnd = System.Drawing.Color.Empty;
+            this.xPanderPanel1.CustomColors.CaptionCheckedGradientMiddle = System.Drawing.Color.Empty;
+            this.xPanderPanel1.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel1.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel1.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.xPanderPanel1.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.xPanderPanel1.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.xPanderPanel1.CustomColors.CaptionPressedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel1.CustomColors.CaptionPressedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel1.CustomColors.CaptionPressedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel1.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel1.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel1.CustomColors.CaptionSelectedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel1.CustomColors.CaptionSelectedText = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel1.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xPanderPanel1.ForeColor = System.Drawing.Color.Black;
+            this.xPanderPanel1.Image = null;
+            this.xPanderPanel1.Name = "xPanderPanel1";
+            this.xPanderPanel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
+            this.xPanderPanel1.Size = new System.Drawing.Size(200, 50);
+            this.xPanderPanel1.TabIndex = 0;
+            this.xPanderPanel1.Text = "单路控制";
+            this.xPanderPanel1.ToolTipTextCloseIcon = null;
+            this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
+            this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 50);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(198, 0);
+            this.tableLayoutPanel1.TabIndex = 15;
+            // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel2.Location = new System.Drawing.Point(3, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(193, 481);
+            this.panel2.Size = new System.Drawing.Size(192, 1);
             this.panel2.TabIndex = 14;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.numericUpDown1);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(192, 44);
+            this.panel6.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(13, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "播放时长";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(67, 53);
+            this.numericUpDown1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.numericUpDown1.Location = new System.Drawing.Point(89, 10);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -303,7 +411,7 @@
             0,
             0});
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(77, 21);
+            this.numericUpDown1.Size = new System.Drawing.Size(65, 26);
             this.numericUpDown1.TabIndex = 13;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numericUpDown1.Value = new decimal(new int[] {
@@ -315,20 +423,178 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 57);
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(160, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(11, 12);
+            this.label3.Size = new System.Drawing.Size(16, 16);
             this.label3.TabIndex = 12;
             this.label3.Text = "S";
             // 
-            // label1
+            // xPanderPanel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "播放时长";
+            this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xPanderPanel2.CaptionHeight = 50;
+            this.xPanderPanel2.Controls.Add(this.pnlVideoList);
+            this.xPanderPanel2.CustomColors.BackColor = System.Drawing.SystemColors.Control;
+            this.xPanderPanel2.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.xPanderPanel2.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.Empty;
+            this.xPanderPanel2.CustomColors.CaptionCheckedGradientEnd = System.Drawing.Color.Empty;
+            this.xPanderPanel2.CustomColors.CaptionCheckedGradientMiddle = System.Drawing.Color.Empty;
+            this.xPanderPanel2.CustomColors.CaptionCloseIcon = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel2.CustomColors.CaptionExpandIcon = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel2.CustomColors.CaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.xPanderPanel2.CustomColors.CaptionGradientEnd = System.Drawing.SystemColors.ButtonFace;
+            this.xPanderPanel2.CustomColors.CaptionGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.xPanderPanel2.CustomColors.CaptionPressedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel2.CustomColors.CaptionPressedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel2.CustomColors.CaptionPressedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(188)))), ((int)(((byte)(235)))));
+            this.xPanderPanel2.CustomColors.CaptionSelectedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel2.CustomColors.CaptionSelectedGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel2.CustomColors.CaptionSelectedGradientMiddle = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(215)))), ((int)(((byte)(243)))));
+            this.xPanderPanel2.CustomColors.CaptionSelectedText = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel2.CustomColors.CaptionText = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
+            this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel2.Expand = true;
+            this.xPanderPanel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.xPanderPanel2.Image = null;
+            this.xPanderPanel2.Name = "xPanderPanel2";
+            this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
+            this.xPanderPanel2.Size = new System.Drawing.Size(200, 511);
+            this.xPanderPanel2.TabIndex = 1;
+            this.xPanderPanel2.Text = "视频列表";
+            this.xPanderPanel2.ToolTipTextCloseIcon = null;
+            this.xPanderPanel2.ToolTipTextExpandIconPanelCollapsed = null;
+            this.xPanderPanel2.ToolTipTextExpandIconPanelExpanded = null;
+            // 
+            // pnlVideoList
+            // 
+            this.pnlVideoList.Controls.Add(this.tblVideos);
+            this.pnlVideoList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlVideoList.Location = new System.Drawing.Point(1, 50);
+            this.pnlVideoList.Name = "pnlVideoList";
+            this.pnlVideoList.Size = new System.Drawing.Size(198, 461);
+            this.pnlVideoList.TabIndex = 0;
+            // 
+            // tblVideos
+            // 
+            this.tblVideos.ColumnCount = 1;
+            this.tblVideos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblVideos.Controls.Add(this.dgvVideo, 0, 1);
+            this.tblVideos.Controls.Add(this.panel5, 0, 0);
+            this.tblVideos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblVideos.Location = new System.Drawing.Point(0, 0);
+            this.tblVideos.Name = "tblVideos";
+            this.tblVideos.RowCount = 2;
+            this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblVideos.Size = new System.Drawing.Size(198, 461);
+            this.tblVideos.TabIndex = 3;
+            // 
+            // dgvVideo
+            // 
+            this.dgvVideo.AllowUserToAddRows = false;
+            this.dgvVideo.AllowUserToDeleteRows = false;
+            this.dgvVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVideo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.VideoName,
+            this.VideoAddr});
+            this.dgvVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVideo.Location = new System.Drawing.Point(8, 48);
+            this.dgvVideo.Margin = new System.Windows.Forms.Padding(8);
+            this.dgvVideo.MultiSelect = false;
+            this.dgvVideo.Name = "dgvVideo";
+            this.dgvVideo.ReadOnly = true;
+            this.dgvVideo.RowTemplate.Height = 23;
+            this.dgvVideo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvVideo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVideo.Size = new System.Drawing.Size(182, 405);
+            this.dgvVideo.TabIndex = 2;
+            this.dgvVideo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellContentClick);
+            this.dgvVideo.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvVideo_RowPostPaint);
+            // 
+            // VideoName
+            // 
+            this.VideoName.DataPropertyName = "VideoName";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.VideoName.DefaultCellStyle = dataGridViewCellStyle1;
+            this.VideoName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.VideoName.HeaderText = "视频名称";
+            this.VideoName.MinimumWidth = 100;
+            this.VideoName.Name = "VideoName";
+            this.VideoName.ReadOnly = true;
+            this.VideoName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VideoName.Width = 140;
+            // 
+            // VideoAddr
+            // 
+            this.VideoAddr.DataPropertyName = "VideoAddr";
+            this.VideoAddr.HeaderText = "视频地址";
+            this.VideoAddr.MinimumWidth = 240;
+            this.VideoAddr.Name = "VideoAddr";
+            this.VideoAddr.ReadOnly = true;
+            this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.VideoAddr.Visible = false;
+            this.VideoAddr.Width = 240;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.btnSelect);
+            this.panel5.Controls.Add(this.btnClear);
+            this.panel5.Controls.Add(this.btnDel);
+            this.panel5.Controls.Add(this.btnAdd);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 3);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(192, 34);
+            this.panel5.TabIndex = 3;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(95, 4);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(24, 24);
+            this.btnSelect.TabIndex = 3;
+            this.btnSelect.Text = "S";
+            this.ttMain.SetToolTip(this.btnSelect, "选择文件夹导入");
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(66, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(24, 24);
+            this.btnClear.TabIndex = 2;
+            this.btnClear.Text = "C";
+            this.ttMain.SetToolTip(this.btnClear, "清除列表");
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(36, 4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(24, 24);
+            this.btnDel.TabIndex = 1;
+            this.btnDel.Text = "-";
+            this.ttMain.SetToolTip(this.btnDel, "删除视频");
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(6, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(24, 24);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "+";
+            this.ttMain.SetToolTip(this.btnAdd, "添加视频");
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ErrorMSG
             // 
@@ -348,7 +614,7 @@
             this.WakeUpBTN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WakeUpBTN.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WakeUpBTN.Location = new System.Drawing.Point(623, 12);
+            this.WakeUpBTN.Location = new System.Drawing.Point(616, 12);
             this.WakeUpBTN.Name = "WakeUpBTN";
             this.WakeUpBTN.Size = new System.Drawing.Size(75, 43);
             this.WakeUpBTN.TabIndex = 20;
@@ -361,7 +627,7 @@
             this.CycleCB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CycleCB.AutoSize = true;
-            this.CycleCB.Location = new System.Drawing.Point(492, 25);
+            this.CycleCB.Location = new System.Drawing.Point(485, 25);
             this.CycleCB.Name = "CycleCB";
             this.CycleCB.Size = new System.Drawing.Size(48, 16);
             this.CycleCB.TabIndex = 21;
@@ -422,14 +688,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 534);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(707, 66);
+            this.panel3.Size = new System.Drawing.Size(700, 66);
             this.panel3.TabIndex = 25;
             // 
             // txtCycTimes
             // 
             this.txtCycTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCycTimes.Location = new System.Drawing.Point(448, 23);
+            this.txtCycTimes.Location = new System.Drawing.Point(441, 23);
             this.txtCycTimes.Name = "txtCycTimes";
             this.txtCycTimes.Size = new System.Drawing.Size(39, 21);
             this.txtCycTimes.TabIndex = 25;
@@ -440,7 +706,7 @@
             this.lblCycTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCycTimes.AutoSize = true;
-            this.lblCycTimes.Location = new System.Drawing.Point(389, 27);
+            this.lblCycTimes.Location = new System.Drawing.Point(382, 27);
             this.lblCycTimes.Name = "lblCycTimes";
             this.lblCycTimes.Size = new System.Drawing.Size(59, 12);
             this.lblCycTimes.TabIndex = 26;
@@ -453,7 +719,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 39);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(707, 495);
+            this.panel4.Size = new System.Drawing.Size(700, 495);
             this.panel4.TabIndex = 26;
             // 
             // WMP
@@ -465,20 +731,12 @@
             this.WMP.Name = "WMP";
             this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
             this.WMP.Padding = new System.Windows.Forms.Padding(0, 0, 179, 0);
-            this.WMP.Size = new System.Drawing.Size(707, 495);
+            this.WMP.Size = new System.Drawing.Size(700, 495);
             this.WMP.TabIndex = 0;
             this.WMP.StatusChange += new System.EventHandler(this.WMP_StatusChange);
             this.WMP.PositionChange += new AxWMPLib._WMPOCXEvents_PositionChangeEventHandler(this.WMP_PositionChange);
             this.WMP.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.WMP_ClickEvent);
             this.WMP.ClientSizeChanged += new System.EventHandler(this.WMP_ClientSizeChanged);
-            // 
-            // Server_config_ToolStripMenuItem
-            // 
-            this.Server_config_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
-            this.Server_config_ToolStripMenuItem.Name = "Server_config_ToolStripMenuItem";
-            this.Server_config_ToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.Server_config_ToolStripMenuItem.Text = "服务配置";
-            this.Server_config_ToolStripMenuItem.Click += new System.EventHandler(this.Server_config_ToolStripMenuItem_Click);
             // 
             // Player
             // 
@@ -512,8 +770,17 @@
             this.TOPmenuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICON_PB)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.xPanderPanelList1.ResumeLayout(false);
+            this.xPanderPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.xPanderPanel2.ResumeLayout(false);
+            this.pnlVideoList.ResumeLayout(false);
+            this.tblVideos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -537,7 +804,6 @@
         private System.Windows.Forms.Button g_Close_Btn;
         private System.Windows.Forms.PictureBox ICON_PB;
         private System.Windows.Forms.Label Title_Label;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label CurrentDeviceLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -559,6 +825,22 @@
         private System.Windows.Forms.TextBox txtCycTimes;
         private System.Windows.Forms.Label lblCycTimes;
         private System.Windows.Forms.ToolStripMenuItem Server_config_ToolStripMenuItem;
+        private BSE.Windows.Forms.XPanderPanelList xPanderPanelList1;
+        private BSE.Windows.Forms.XPanderPanel xPanderPanel1;
+        private BSE.Windows.Forms.XPanderPanel xPanderPanel2;
+        private System.Windows.Forms.Panel pnlVideoList;
+        private System.Windows.Forms.DataGridView dgvVideo;
+        private System.Windows.Forms.TableLayoutPanel tblVideos;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ToolTip ttMain;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridViewButtonColumn VideoName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VideoAddr;
     }
 }
 

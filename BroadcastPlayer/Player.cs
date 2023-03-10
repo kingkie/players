@@ -1,4 +1,5 @@
 ﻿using BroadcastPlayer.Forms;
+using BroadcastPlayer.Models;
 using BroadcastPlayer.Runtime;
 using CinemaSetter;
 using CinemaSetter.Runtime;
@@ -6,9 +7,11 @@ using CinemaSetter.Runtime.DataStructrues;
 using CinemaSetter.ToolKit;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.IO.Ports;
+using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -33,12 +36,13 @@ namespace BroadcastPlayer
 
         public BPRuntime Runtime = new BPRuntime();
 
-
         private ScentrealmBCC.SPController SPController = ScentrealmBCC.SPController.getInstance();
 
         private ScentRealmSDKCMD SR_SDK = new ScentRealmSDKCMD();
 
-    //    private ScentrealmBCC.BCController bCC = ScentrealmBCC.BCController.getInstance();
+        //    private ScentrealmBCC.BCController bCC = ScentrealmBCC.BCController.getInstance();
+
+        BindingList<VideoInfo> VideoPlayList = null;// new BindingList<VideoInfo>(AppManager.CreateInstance().PlayList.VideoList);
 
         public Player()
         {
@@ -48,6 +52,12 @@ namespace BroadcastPlayer
             UISync.Init(this);
 
             TransactionMission.DefaultTimeoutMilliSecond = 1500;
+
+            AppManager.CreateInstance().Init();
+
+            VideoPlayList = new BindingList<VideoInfo>(AppManager.CreateInstance().PlayList.VideoList);
+
+            dgvVideo.DataSource = VideoPlayList;//使用BindingList绑定
 
             // 配置
             LoadSetting();
@@ -96,51 +106,6 @@ namespace BroadcastPlayer
             }
             WMP.uiMode = "None";
 
-            //this.KeyPreview = true;
-            //this.KeyDown += TOPmenuStrip1_KeyDown;
-
-            //Runtime.Scents.Add("桂花");
-            //Runtime.Scents.Add("桃花");
-            //Runtime.Scents.Add("柠檬");
-
-            //var fffff = new System.Windows.Forms.Timer();
-            //fffff.Interval = 40;
-            //fffff.Tick += (object sender, EventArgs e) =>
-            //{
-            //    if (WMP.fullScreen)
-            //    {
-            //        if (WMP.uiMode == "full")
-            //            WMP.uiMode = "None";
-            //    }
-            //    else
-            //    {
-            //        if (WMP.uiMode == "None")
-            //            WMP.uiMode = "full";
-            //    }
-            //};
-            //fffff.Start();
-
-
-            //if (!String.IsNullOrEmpty(Runtime.LastPlayVideo))
-            //{
-            //    // 自动播放上一个视频
-            //    // 考虑 载入然后暂停
-            //    if (File.Exists(Runtime.LastPlayVideo))
-            //    {
-
-            //        String ScriptName = Path.GetDirectoryName(Runtime.LastPlayVideo) + "\\" + Path.GetFileNameWithoutExtension(Runtime.LastPlayVideo) + ".srt";
-            //        CurrentScript = null;
-            //        TimePointArray = null;
-
-            //        CurrentScript = scriptSchedule.convertSrt2ScheduleSimple(ScriptName);
-
-            //        TimePointArray = LoadScriptArray(CurrentScript);
-            //        ScriprTimerStart();
-            //        WMP.URL = Runtime.LastPlayVideo;
-
-            //        //       WMP.Ctlcontrols.play();
-            //    }
-            //}
             panel2.AutoScroll = true;
             panel2.HorizontalScroll.Visible = false;
             panel2.VerticalScroll.Visible = true;
@@ -1848,6 +1813,129 @@ namespace BroadcastPlayer
             {
                 Console.WriteLine("Err:" + ex.Message);
             }
+        }
+
+        private void dgvVideo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int rowIndex = dgvVideo.CurrentRow.Index;
+                if (AppManager.CreateInstance().PlayList.VideoList.Count > rowIndex)
+                {
+                    Console.WriteLine("点击了：" + VideoPlayList[rowIndex].VideoName);
+                    WaitToPlayFile = VideoPlayList[rowIndex].VideoAddr;
+                    WMP.URL = WaitToPlayFile;
+                    WMP.Ctlcontrols.play();
+
+                    string ScriptName = Path.GetDirectoryName(WaitToPlayFile) + "\\" + Path.GetFileNameWithoutExtension(WaitToPlayFile) + ".srt";
+                    CurrentScript = null;
+                    TimePointArray = null;
+                    if (File.Exists(ScriptName))
+                    {
+                        CurrentScript = scriptSchedule.convertSrt2ScheduleSimple(ScriptName);
+
+                        TimePointArray = LoadScriptArray(CurrentScript);
+                        Runtime.LastPlayVideo = WaitToPlayFile;
+                    }
+                    ScriprTimerStart();
+                }
+            }
+            catch
+            { }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fileDialog = new OpenFileDialog())
+            {
+                fileDialog.Filter = "视频文件(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = fileDialog.SafeFileName;
+
+                    VideoInfo vInfo = new VideoInfo();
+                    vInfo.VideoName = fileName.Split(new char[] { '.' })[0];
+                    vInfo.VideoAddr = fileDialog.FileName;
+
+                    VideoPlayList.Add(vInfo);
+
+                    dgvVideo.Refresh();
+
+                    AppManager.CreateInstance().SavePlayList();
+                }
+            }
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvVideo.SelectedRows.Count < 1)
+                {
+                    //MessageBox.Show("请选择要删除的行！");
+                    return;
+                }
+                var vInfo = this.dgvVideo.CurrentRow.DataBoundItem as VideoInfo;
+
+                VideoPlayList.Remove(vInfo);
+                dgvVideo.Refresh();
+
+                AppManager.CreateInstance().SavePlayList();
+            }
+            catch
+            { }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VideoPlayList.Clear();
+                dgvVideo.Refresh();
+
+                AppManager.CreateInstance().SavePlayList();
+            }
+            catch
+            { }
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //"视频文件(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*"; 
+                FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+                if(folderBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    string foldString = folderBrowser.SelectedPath;
+                    var videofiles = Directory.GetFiles(foldString, "*", SearchOption.AllDirectories).Where(s=> s.EndsWith(".mp4") || s.EndsWith(".avi") || s.EndsWith(".wmv") || s.EndsWith(".rmvb") || s.EndsWith(".rm"));
+                    
+                    foreach(var item in videofiles)
+                    {
+                        VideoInfo vInfo = new VideoInfo();
+                        vInfo.VideoName = Path.GetFileNameWithoutExtension(item);
+                        vInfo.VideoAddr = item;
+
+                        VideoPlayList.Add(vInfo);
+                        Console.WriteLine(item);
+                    }
+
+                    if(videofiles != null && videofiles.Count() > 0)
+                    {
+                        dgvVideo.Refresh();
+
+                        AppManager.CreateInstance().SavePlayList();
+                    }
+                }
+            }
+            catch
+            { }
+        }
+
+        private void dgvVideo_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            SolidBrush b = new SolidBrush(this.dgvVideo.RowHeadersDefaultCellStyle.ForeColor);
+            e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvVideo.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
         }
     }
 

@@ -30,24 +30,24 @@ namespace BroadcastPlayer.Forms
         private void InitializeComponent()
         {
             this.pnlCmd = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboServerIP = new System.Windows.Forms.ComboBox();
             this.btnService = new System.Windows.Forms.Button();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
             this.VideoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.pnlCmd.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCmd
@@ -62,18 +62,6 @@ namespace BroadcastPlayer.Forms
             this.pnlCmd.Name = "pnlCmd";
             this.pnlCmd.Size = new System.Drawing.Size(548, 85);
             this.pnlCmd.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.dgvVideo);
-            this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 281);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "视频列表";
             // 
             // cboServerIP
             // 
@@ -134,17 +122,17 @@ namespace BroadcastPlayer.Forms
             this.label1.TabIndex = 5;
             this.label1.Text = "服务IP:";
             // 
-            // panel1
+            // groupBox1
             // 
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.btnDel);
-            this.panel1.Controls.Add(this.btnEdit);
-            this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(444, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(101, 261);
-            this.panel1.TabIndex = 0;
+            this.groupBox1.Controls.Add(this.dgvVideo);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(548, 281);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "视频列表";
             // 
             // dgvVideo
             // 
@@ -161,46 +149,6 @@ namespace BroadcastPlayer.Forms
             this.dgvVideo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVideo.Size = new System.Drawing.Size(441, 261);
             this.dgvVideo.TabIndex = 1;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(12, 21);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 35);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添 加";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(12, 67);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 35);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "修 改";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Visible = false;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(12, 114);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 35);
-            this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "删 除";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(7, 207);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 35);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "保存设置";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // VideoName
             // 
@@ -220,6 +168,59 @@ namespace BroadcastPlayer.Forms
             this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.VideoAddr.Width = 240;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSave);
+            this.panel1.Controls.Add(this.btnDel);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnAdd);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(444, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(101, 261);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(7, 207);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 35);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "保存设置";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(12, 114);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 35);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = "删 除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(12, 67);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 35);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "修 改";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(12, 21);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 35);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "添 加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // OpenServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -237,8 +238,8 @@ namespace BroadcastPlayer.Forms
             this.pnlCmd.ResumeLayout(false);
             this.pnlCmd.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
