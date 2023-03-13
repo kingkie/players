@@ -265,9 +265,9 @@
             this.Title_Label.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Title_Label.Location = new System.Drawing.Point(46, 13);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(150, 15);
+            this.Title_Label.Size = new System.Drawing.Size(141, 15);
             this.Title_Label.TabIndex = 8;
-            this.Title_Label.Text = "气味播放器-v2.1.1";
+            this.Title_Label.Text = "气味播放器V2.2.1";
             // 
             // CurrentDeviceLabel
             // 
