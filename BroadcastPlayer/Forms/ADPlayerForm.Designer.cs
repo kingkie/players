@@ -39,8 +39,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.自动连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.手动连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.断开连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -166,6 +166,13 @@
             this.手动连接ToolStripMenuItem.Text = "手动连接";
             this.手动连接ToolStripMenuItem.DropDownOpening += new System.EventHandler(this.手动连接ToolStripMenuItem_DropDownOpening);
             // 
+            // 断开连接ToolStripMenuItem
+            // 
+            this.断开连接ToolStripMenuItem.Name = "断开连接ToolStripMenuItem";
+            this.断开连接ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
+            this.断开连接ToolStripMenuItem.Text = "断开连接";
+            this.断开连接ToolStripMenuItem.Click += new System.EventHandler(this.断开连接ToolStripMenuItem_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -181,13 +188,6 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "控制气味播放";
-            // 
-            // 断开连接ToolStripMenuItem
-            // 
-            this.断开连接ToolStripMenuItem.Name = "断开连接ToolStripMenuItem";
-            this.断开连接ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.断开连接ToolStripMenuItem.Text = "断开连接";
-            this.断开连接ToolStripMenuItem.Click += new System.EventHandler(this.断开连接ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -216,6 +216,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ADPlayerForm";
+            this.ShowIcon = false;
             this.Text = "气味广告示例";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

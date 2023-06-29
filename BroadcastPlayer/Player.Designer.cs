@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TOPmenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Connect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoConnect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -257,17 +257,18 @@
             this.ICON_PB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ICON_PB.TabIndex = 7;
             this.ICON_PB.TabStop = false;
+            this.ICON_PB.Visible = false;
             // 
             // Title_Label
             // 
             this.Title_Label.AutoSize = true;
             this.Title_Label.BackColor = System.Drawing.Color.White;
             this.Title_Label.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Title_Label.Location = new System.Drawing.Point(46, 13);
+            this.Title_Label.Location = new System.Drawing.Point(11, 13);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(141, 15);
+            this.Title_Label.Size = new System.Drawing.Size(123, 15);
             this.Title_Label.TabIndex = 8;
-            this.Title_Label.Text = "气味播放器V2.2.1";
+            this.Title_Label.Text = "气味播放器V3.0";
             // 
             // CurrentDeviceLabel
             // 
@@ -337,12 +338,13 @@
             this.xPanderPanel1.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel1.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel1.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
+            this.xPanderPanel1.Expand = true;
             this.xPanderPanel1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.xPanderPanel1.ForeColor = System.Drawing.Color.Black;
             this.xPanderPanel1.Image = null;
             this.xPanderPanel1.Name = "xPanderPanel1";
             this.xPanderPanel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel1.Size = new System.Drawing.Size(200, 50);
+            this.xPanderPanel1.Size = new System.Drawing.Size(200, 511);
             this.xPanderPanel1.TabIndex = 0;
             this.xPanderPanel1.Text = "单路控制";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
@@ -362,7 +364,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(198, 0);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(198, 461);
             this.tableLayoutPanel1.TabIndex = 15;
             // 
             // panel2
@@ -371,7 +373,7 @@
             this.panel2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panel2.Location = new System.Drawing.Point(3, 53);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 1);
+            this.panel2.Size = new System.Drawing.Size(192, 375);
             this.panel2.TabIndex = 14;
             // 
             // panel6
@@ -457,13 +459,12 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.SystemColors.Window;
-            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel2.Size = new System.Drawing.Size(200, 511);
+            this.xPanderPanel2.Size = new System.Drawing.Size(200, 50);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "视频列表";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -476,7 +477,7 @@
             this.pnlVideoList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVideoList.Location = new System.Drawing.Point(1, 50);
             this.pnlVideoList.Name = "pnlVideoList";
-            this.pnlVideoList.Size = new System.Drawing.Size(198, 461);
+            this.pnlVideoList.Size = new System.Drawing.Size(198, 0);
             this.pnlVideoList.TabIndex = 0;
             // 
             // tblVideos
@@ -491,7 +492,7 @@
             this.tblVideos.RowCount = 2;
             this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblVideos.Size = new System.Drawing.Size(198, 461);
+            this.tblVideos.Size = new System.Drawing.Size(198, 0);
             this.tblVideos.TabIndex = 3;
             // 
             // dgvVideo
@@ -511,7 +512,7 @@
             this.dgvVideo.RowTemplate.Height = 23;
             this.dgvVideo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvVideo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVideo.Size = new System.Drawing.Size(182, 405);
+            this.dgvVideo.Size = new System.Drawing.Size(182, 1);
             this.dgvVideo.TabIndex = 2;
             this.dgvVideo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellContentClick);
             this.dgvVideo.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvVideo_RowPostPaint);
@@ -519,8 +520,8 @@
             // VideoName
             // 
             this.VideoName.DataPropertyName = "VideoName";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.VideoName.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.VideoName.DefaultCellStyle = dataGridViewCellStyle5;
             this.VideoName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.VideoName.HeaderText = "视频名称";
             this.VideoName.MinimumWidth = 100;
