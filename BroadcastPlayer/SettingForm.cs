@@ -77,7 +77,7 @@ namespace BroadcastPlayer
                         }
                         else
                         { 
-                            DialogResult dr = MessageBox.Show("未找到该设备！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            DialogResult dr = MessageBox.Show("Not found device！", "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             if (dr == DialogResult.OK)
                             {
@@ -89,7 +89,7 @@ namespace BroadcastPlayer
                     }
                     else
                     {
-                        DialogResult dr = MessageBox.Show("请输入数字！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DialogResult dr = MessageBox.Show("Input Device Number！", "Err", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         
                         if (dr == DialogResult.OK)
                         {

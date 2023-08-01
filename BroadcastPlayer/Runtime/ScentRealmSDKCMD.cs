@@ -15,8 +15,8 @@ namespace BroadcastPlayer.Runtime
         {
             string[] MSGArray = new String[] {
                     "OK",
-                    "设备",
-                    "控制器"
+                    "Device",
+                    "Controller"
                 };
             return MSGArray[StatusCode];
         }

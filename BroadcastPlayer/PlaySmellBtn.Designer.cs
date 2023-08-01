@@ -50,9 +50,9 @@
             this.coutdown_label2.AutoSize = true;
             this.coutdown_label2.Location = new System.Drawing.Point(8, 62);
             this.coutdown_label2.Name = "coutdown_label2";
-            this.coutdown_label2.Size = new System.Drawing.Size(65, 12);
+            this.coutdown_label2.Size = new System.Drawing.Size(59, 12);
             this.coutdown_label2.TabIndex = 1;
-            this.coutdown_label2.Text = "还剩 10 秒";
+            this.coutdown_label2.Text = "Rest 10 S";
             this.coutdown_label2.Visible = false;
             // 
             // pictureBox1

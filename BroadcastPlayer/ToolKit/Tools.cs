@@ -802,8 +802,6 @@ namespace CinemaSetter.ToolKit
                 Console.WriteLine(RandomEnWordWithLengthLimit(5, 25));
             }
 
-
-
             Environment.Exit(0);
 
             String distFilename = "Text.bmp";

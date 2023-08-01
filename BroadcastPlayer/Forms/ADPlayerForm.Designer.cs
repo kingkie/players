@@ -39,8 +39,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.自动连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.手动连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.断开连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -56,7 +56,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 66);
             this.button1.TabIndex = 0;
-            this.button1.Text = "1 号";
+            this.button1.Text = "Num 1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -67,7 +67,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 66);
             this.button2.TabIndex = 1;
-            this.button2.Text = "2 号";
+            this.button2.Text = "Num 2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -78,7 +78,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 66);
             this.button3.TabIndex = 2;
-            this.button3.Text = "3 号";
+            this.button3.Text = "Num 3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -89,7 +89,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 66);
             this.button4.TabIndex = 3;
-            this.button4.Text = "4 号";
+            this.button4.Text = "Num 4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -97,11 +97,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(23, 39);
+            this.label1.Location = new System.Drawing.Point(60, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(226, 24);
+            this.label1.Size = new System.Drawing.Size(190, 24);
             this.label1.TabIndex = 4;
-            this.label1.Text = "气味播放时长（秒）";
+            this.label1.Text = "Play Times（S）";
             // 
             // numericUpDown1
             // 
@@ -133,7 +133,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 66);
             this.button5.TabIndex = 6;
-            this.button5.Text = "停止播放";
+            this.button5.Text = "Stop";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -154,17 +154,24 @@
             // 
             this.自动连接ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.自动连接ToolStripMenuItem.Name = "自动连接ToolStripMenuItem";
-            this.自动连接ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.自动连接ToolStripMenuItem.Text = "自动连接";
+            this.自动连接ToolStripMenuItem.Size = new System.Drawing.Size(145, 29);
+            this.自动连接ToolStripMenuItem.Text = "AutoConnect";
             this.自动连接ToolStripMenuItem.Click += new System.EventHandler(this.自动连接ToolStripMenuItem_Click);
             // 
             // 手动连接ToolStripMenuItem
             // 
             this.手动连接ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 14F);
             this.手动连接ToolStripMenuItem.Name = "手动连接ToolStripMenuItem";
-            this.手动连接ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.手动连接ToolStripMenuItem.Text = "手动连接";
+            this.手动连接ToolStripMenuItem.Size = new System.Drawing.Size(171, 29);
+            this.手动连接ToolStripMenuItem.Text = "ManualConnect";
             this.手动连接ToolStripMenuItem.DropDownOpening += new System.EventHandler(this.手动连接ToolStripMenuItem_DropDownOpening);
+            // 
+            // 断开连接ToolStripMenuItem
+            // 
+            this.断开连接ToolStripMenuItem.Name = "断开连接ToolStripMenuItem";
+            this.断开连接ToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
+            this.断开连接ToolStripMenuItem.Text = "Disconnect";
+            this.断开连接ToolStripMenuItem.Click += new System.EventHandler(this.断开连接ToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -180,14 +187,6 @@
             this.groupBox1.Size = new System.Drawing.Size(465, 217);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "控制气味播放";
-            // 
-            // 断开连接ToolStripMenuItem
-            // 
-            this.断开连接ToolStripMenuItem.Name = "断开连接ToolStripMenuItem";
-            this.断开连接ToolStripMenuItem.Size = new System.Drawing.Size(100, 29);
-            this.断开连接ToolStripMenuItem.Text = "断开连接";
-            this.断开连接ToolStripMenuItem.Click += new System.EventHandler(this.断开连接ToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -216,7 +215,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ADPlayerForm";
-            this.Text = "气味广告示例";
+            this.Text = "Controller Sample";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

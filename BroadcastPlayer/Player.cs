@@ -101,7 +101,7 @@ namespace BroadcastPlayer
                 if (!ScentRealmSDKCMD.IsOK(status))
                 {
                     // ERROR
-                    ShowErrorMSG(ScentRealmSDKCMD.GetErrorMSG(status) + "未连接", 12000);
+                    ShowErrorMSG(ScentRealmSDKCMD.GetErrorMSG(status) + " not connected", 12000);
                 }
             }
             WMP.uiMode = "None";
@@ -209,7 +209,7 @@ namespace BroadcastPlayer
                 }
                 catch
                 {
-                    Tools.NonBlockingMsgBox("串口已断开，唤醒中断！");
+                    Tools.NonBlockingMsgBox("SerialPort disconnected！");
                 }
             }
         }
@@ -276,11 +276,11 @@ namespace BroadcastPlayer
             // 显示当前设备信息
             if (Runtime.UsingAllDevice)
             {
-                CurrentDeviceLabel.Text = "当前设备:所有设备";
+                CurrentDeviceLabel.Text = "Current Device:All Devices";
             }
             else
             {
-                CurrentDeviceLabel.Text = "当前设备:" + Runtime.CurrentDevice.ToString().PadLeft(4, '0');
+                CurrentDeviceLabel.Text = "Current Device:" + Runtime.CurrentDevice.ToString().PadLeft(4, '0');
             }
 
             AdjustStep = Runtime.AdjustStep;
@@ -352,7 +352,7 @@ namespace BroadcastPlayer
                     try
                     {
                         SP.Open();
-                        AutoConnect_ToolStripMenuItem.Text = "已连接";
+                        AutoConnect_ToolStripMenuItem.Text = "Connected";
                     }
                     catch
                     {
@@ -367,14 +367,14 @@ namespace BroadcastPlayer
 
                 if (ShowMsg)
                 {
-                    Tools.BlockingMsgBox("遥控器连接失败，请重新连接！", "遥控断开");
+                    Tools.BlockingMsgBox("Controller Connect Failed！", "Err");
                 }
                 else
                 {
                     if (!NextMSBNotShow)
                         Tools.NewThread(() => {
                             if (!Tools.HasThisMessageBox("遥控断开"))
-                                Tools.BlockingMsgBox("遥控器连接失败，请重新连接！", "遥控断开");
+                                Tools.BlockingMsgBox("Controller Connect Failed,Try Again！", "Info");
                             NextMSBNotShow = false;
                         });
 
@@ -404,7 +404,7 @@ namespace BroadcastPlayer
                     try
                     {
                         SP.Open();
-                        Connect_ADP_ToolStripMenuItem.Text = "已连接";
+                        Connect_ADP_ToolStripMenuItem.Text = "Connected";
                     }
                     catch
                     {
@@ -422,14 +422,14 @@ namespace BroadcastPlayer
                 DisConnect_ADP_ToolStripMenuItem_Click(DisConnect_ADP_ToolStripMenuItem, null);
                 if (ShowMsg)
                 {
-                    Tools.BlockingMsgBox("设备已断开连接，请重新连接！", "设备断开连接");
+                    Tools.BlockingMsgBox("Device Connect Failed，Try Again！", "DisConnected");
                 }
                 else
                 {
                     if (!NextMSBNotShow)
                         Tools.NewThread(() => {
                             if (!Tools.HasThisMessageBox("设备断开连接"))
-                                Tools.BlockingMsgBox("设备已断开连接，请重新连接！", "设备断开连接");
+                                Tools.BlockingMsgBox("Device Connect Failed，Try Again！", "DisConnected");
                             NextMSBNotShow = false;
                         });
 
@@ -471,14 +471,14 @@ namespace BroadcastPlayer
                 if (Ret > 0)
                 {
                    
-                    Tools.BlockingMsgBox(ScentRealmSDKCMD.GetErrorMSG(Ret) +"已断开连接，请重新连接！", "断开连接");
+                    Tools.BlockingMsgBox(ScentRealmSDKCMD.GetErrorMSG(Ret) + " Disconnected，Please Connect Again！", "DisConnected");
                 }
                 else
                 {
                     if (!NextMSBNotShow)
                         Tools.NewThread(() => {
                             if (!Tools.HasThisMessageBox("断开连接"))
-                                Tools.BlockingMsgBox(ScentRealmSDKCMD.GetErrorMSG(Ret) + "已断开连接，请重新连接！", "断开连接");
+                                Tools.BlockingMsgBox(ScentRealmSDKCMD.GetErrorMSG(Ret) + "Disconnected，Please Connect Again！", "DisConnected");
                             NextMSBNotShow = false;
                         });
 
@@ -562,7 +562,7 @@ namespace BroadcastPlayer
         {
             using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
-                fileDialog.Filter = "视频文件(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
+                fileDialog.Filter = "Video File(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     WaitToPlayFile = fileDialog.FileName;
@@ -675,7 +675,7 @@ namespace BroadcastPlayer
                             OnlyPlaySmell_AD(psb.SmellID, Duration);
                         }
                         else
-                            ShowErrorMSG("设备未连接", 12000);
+                            ShowErrorMSG("Device Disconnected", 12000);
                     }
                     else if (Runtime.DeviceType == DeviceTypeEnum.DTE_Wireless_433_CTL)
                     {
@@ -781,7 +781,7 @@ namespace BroadcastPlayer
                     SPController.VehicleMounted_Stop_Addr(VM_ModuleID);
                 }
                 else
-                    ShowErrorMSG("设备未连接", 12000);
+                    ShowErrorMSG("Device Disconnected", 12000);
             }
             else if (Runtime.DeviceType == DeviceTypeEnum.DTE_Wireless_433_CTL)
             {
@@ -1057,7 +1057,7 @@ namespace BroadcastPlayer
         {
             if (!IsSerialPortReady())
             {
-                Tools.NonBlockingMsgBox("串口未打开");
+                Tools.NonBlockingMsgBox("SerialPort Not Opened");
                 if (OnFailure != null)
                     OnFailure.Invoke();
                 return;
@@ -1085,7 +1085,7 @@ namespace BroadcastPlayer
                         OnFailure.Invoke();
                     else
                     {
-                        Tools.NonBlockingMsgBox("信道设置失败，设备未响应，请确保设备已开机");
+                        Tools.NonBlockingMsgBox("Channel Set Failed Or Device Not Responded,Check Device!");
                     }
                 });
             Queue.Run();
@@ -1094,8 +1094,8 @@ namespace BroadcastPlayer
         private void AutoConnect_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] ButtonText = new String[] {
-                "连遥控器",
-                "连接中"
+                "Connect Controller",
+                "Connecting"
             };
 
             ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
@@ -1113,7 +1113,7 @@ namespace BroadcastPlayer
                 SPACInstance.ConnectController((SerialPort SP,Object obj) => {
 
                     UISync.Execute(() => {
-                        tsmi.Text = "已连接";// + SP.PortName + ">";
+                        tsmi.Text = "Connected";// + SP.PortName + ">";
                         tsmi.Enabled = true;
 
                     });
@@ -1139,7 +1139,7 @@ namespace BroadcastPlayer
                         tsmi.Text = ButtonText[0];
                         tsmi.Enabled = true;
                     });
-                    ShowErrorMSG("遥控器未连接", 12000);
+                    ShowErrorMSG("Controller Disconnected", 12000);
                 });
             }
         }
@@ -1150,8 +1150,8 @@ namespace BroadcastPlayer
             ToolStripMenuItem ThisTSMI = sender as ToolStripMenuItem;
             ToolStripMenuItem MainTSMI = AutoConnect_ToolStripMenuItem;
             String[] ButtonText = new String[] {
-                "连遥控器",
-                "连接中"
+                "Connect Controller",
+                "Connecting"
             };
             if (MainTSMI.Text != ButtonText[0])
             {
@@ -1354,7 +1354,7 @@ namespace BroadcastPlayer
 
                 if (null == _sender)
                 {
-                    CurrentDeviceLabel.Text = "当前设备:所有设备";
+                    CurrentDeviceLabel.Text = "Current Device:All Devices";
 
                     Runtime.UsingAllDevice = true;
                     Runtime.SaveToXMLFile(RuntimeFile);
@@ -1409,7 +1409,7 @@ namespace BroadcastPlayer
                         M_SetDeviceChannel(CurrentDeviceUID, CurrentDeviceChannel, () =>
                         {
                             UISync.Execute(() => {
-                                CurrentDeviceLabel.Text = "当前设备:" + CurrentDeviceID.ToString().PadLeft(4, '0');
+                                CurrentDeviceLabel.Text = "Current Device:" + CurrentDeviceID.ToString().PadLeft(4, '0');
                             });
                             Runtime.UsingAllDevice = false;
                             Runtime.CurrentDevice = CurrentDeviceID;
@@ -1424,7 +1424,7 @@ namespace BroadcastPlayer
                             M_SetDeviceChannel(CurrentDeviceUID, CurrentDeviceChannel, () =>
                             {
                                 UISync.Execute(() => {
-                                    CurrentDeviceLabel.Text = "当前设备:" + CurrentDeviceID.ToString().PadLeft(4, '0');
+                                    CurrentDeviceLabel.Text = "Current Device:" + CurrentDeviceID.ToString().PadLeft(4, '0');
                                 });
                                 Runtime.UsingAllDevice = false;
                                 Runtime.CurrentDevice = CurrentDeviceID;
@@ -1435,7 +1435,7 @@ namespace BroadcastPlayer
                                 SetMainDeviceSuccess = true;
                             }, () =>
                             {
-                                Tools.NonBlockingMsgBox("设备连接 " + CurrentDeviceID.ToString().PadLeft(4, '0') + " 失败，请检查设备是否开机!");
+                                Tools.NonBlockingMsgBox("Device " + CurrentDeviceID.ToString().PadLeft(4, '0') + " Connect Failed，Check Device!");
                                 are.Set();
                             });
                         });
@@ -1464,7 +1464,7 @@ namespace BroadcastPlayer
                                             }, () =>
                                             {
                                                 //    Tools.NonBlockingMsgBox("设备连接 " + bpd.DeviceID.ToString().PadLeft(4, '0') + " 失败，请检查设备是否开机!");
-                                                ShowErrorMSG("设备连接 " + bpd.DeviceID.ToString().PadLeft(4, '0') + " 失败，请检查设备是否开机!");
+                                                ShowErrorMSG("Device " + bpd.DeviceID.ToString().PadLeft(4, '0') + " Connect Failed，Check Device!");
                                                 Runtime.UpdateDeviceInfo(bpd.DeviceID, Runtime.BroadcastChannel);
                                                 Runtime.SaveToXMLFile(RuntimeFile);
                                             });
@@ -1510,7 +1510,7 @@ namespace BroadcastPlayer
                         KeyValuePair<String, Int32> EMSG = ErrorMSG_Queue.Dequeue();
 
                         UISync.Execute(() => {
-                            ErrorMSG.Text = "错误：" + EMSG.Key;
+                            ErrorMSG.Text = "Err：" + EMSG.Key;
                         });
                         Thread.Sleep(EMSG.Value);
                         UISync.Execute(() => {
@@ -1554,7 +1554,7 @@ namespace BroadcastPlayer
 
         private void Reset_config_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("确认清除配置？","确认信息",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if(MessageBox.Show("Clear Configuration？", "Warn",MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 if (File.Exists(RuntimeFile))
                 {
@@ -1566,8 +1566,8 @@ namespace BroadcastPlayer
         private void Connect_ADP_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] ButtonText = new String[] {
-                "连接设备",
-                "连接中"
+                "Connect Device",
+                "Connecting"
             };
 
             ToolStripMenuItem tsmi = sender as ToolStripMenuItem;
@@ -1589,7 +1589,7 @@ namespace BroadcastPlayer
                     if (R)
                     {
                         UISync.Execute(() => {
-                            tsmi.Text = "已连接";// + SP.PortName + ">";
+                            tsmi.Text = "Connected";// + SP.PortName + ">";
                             tsmi.Enabled = true;
 
                         });
@@ -1612,8 +1612,8 @@ namespace BroadcastPlayer
             ToolStripMenuItem ThisTSMI = sender as ToolStripMenuItem;
             ToolStripMenuItem MainTSMI = Connect_ADP_ToolStripMenuItem;
             String[] ButtonText = new String[] {
-                "连接设备",
-                "连接中"
+                "Connect Device",
+                "Connecting"
             };
             if (MainTSMI.Text != ButtonText[0])
             {
@@ -1822,7 +1822,7 @@ namespace BroadcastPlayer
                 int rowIndex = dgvVideo.CurrentRow.Index;
                 if (AppManager.CreateInstance().PlayList.VideoList.Count > rowIndex)
                 {
-                    Console.WriteLine("点击了：" + VideoPlayList[rowIndex].VideoName);
+                    Console.WriteLine("Clicked：" + VideoPlayList[rowIndex].VideoName);
                     WaitToPlayFile = VideoPlayList[rowIndex].VideoAddr;
                     WMP.URL = WaitToPlayFile;
                     WMP.Ctlcontrols.play();
@@ -1848,7 +1848,7 @@ namespace BroadcastPlayer
         {
             using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
-                fileDialog.Filter = "视频文件(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
+                fileDialog.Filter = "Video File(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string fileName = fileDialog.SafeFileName;

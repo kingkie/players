@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TOPmenuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Connect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoConnect_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,8 +61,6 @@
             this.pnlVideoList = new System.Windows.Forms.Panel();
             this.tblVideos = new System.Windows.Forms.TableLayoutPanel();
             this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.VideoName = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -80,6 +78,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.WMP = new AxWMPLib.AxWindowsMediaPlayer();
             this.ttMain = new System.Windows.Forms.ToolTip(this.components);
+            this.VideoName = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TOPmenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ICON_PB)).BeginInit();
             this.panel1.SuspendLayout();
@@ -135,56 +135,56 @@
             // 
             this.AutoConnect_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.AutoConnect_ToolStripMenuItem.Name = "AutoConnect_ToolStripMenuItem";
-            this.AutoConnect_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.AutoConnect_ToolStripMenuItem.Text = "连遥控器";
+            this.AutoConnect_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.AutoConnect_ToolStripMenuItem.Text = "Connect Controller";
             this.AutoConnect_ToolStripMenuItem.Click += new System.EventHandler(this.AutoConnect_ToolStripMenuItem_Click);
             // 
             // CloseSerialPort_ToolStripMenuItem
             // 
             this.CloseSerialPort_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.CloseSerialPort_ToolStripMenuItem.Name = "CloseSerialPort_ToolStripMenuItem";
-            this.CloseSerialPort_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.CloseSerialPort_ToolStripMenuItem.Text = "断开连接";
+            this.CloseSerialPort_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.CloseSerialPort_ToolStripMenuItem.Text = "CloseSerialPort";
             this.CloseSerialPort_ToolStripMenuItem.Click += new System.EventHandler(this.cloasePort_Click);
             // 
             // ChooseDevice
             // 
             this.ChooseDevice.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.ChooseDevice.Name = "ChooseDevice";
-            this.ChooseDevice.Size = new System.Drawing.Size(148, 26);
-            this.ChooseDevice.Text = "选择设备";
+            this.ChooseDevice.Size = new System.Drawing.Size(229, 26);
+            this.ChooseDevice.Text = "ChooseDevice";
             this.ChooseDevice.Click += new System.EventHandler(this.ChooseDeviceToolStripMenuItem_Click);
             // 
             // Connect_ADP_ToolStripMenuItem
             // 
             this.Connect_ADP_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Connect_ADP_ToolStripMenuItem.Name = "Connect_ADP_ToolStripMenuItem";
-            this.Connect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.Connect_ADP_ToolStripMenuItem.Text = "连接设备";
+            this.Connect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.Connect_ADP_ToolStripMenuItem.Text = "Connect ADP";
             this.Connect_ADP_ToolStripMenuItem.Click += new System.EventHandler(this.Connect_ADP_ToolStripMenuItem_Click);
             // 
             // DisConnect_ADP_ToolStripMenuItem
             // 
             this.DisConnect_ADP_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.DisConnect_ADP_ToolStripMenuItem.Name = "DisConnect_ADP_ToolStripMenuItem";
-            this.DisConnect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.DisConnect_ADP_ToolStripMenuItem.Text = "断开连接";
+            this.DisConnect_ADP_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.DisConnect_ADP_ToolStripMenuItem.Text = "DisConnect ADP";
             this.DisConnect_ADP_ToolStripMenuItem.Click += new System.EventHandler(this.DisConnect_ADP_ToolStripMenuItem_Click);
             // 
             // Reset_config_ToolStripMenuItem
             // 
             this.Reset_config_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Reset_config_ToolStripMenuItem.Name = "Reset_config_ToolStripMenuItem";
-            this.Reset_config_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.Reset_config_ToolStripMenuItem.Text = "清除配置";
+            this.Reset_config_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.Reset_config_ToolStripMenuItem.Text = "Reset Config";
             this.Reset_config_ToolStripMenuItem.Click += new System.EventHandler(this.Reset_config_ToolStripMenuItem_Click);
             // 
             // Server_config_ToolStripMenuItem
             // 
             this.Server_config_ToolStripMenuItem.Font = new System.Drawing.Font("微软雅黑", 12F);
             this.Server_config_ToolStripMenuItem.Name = "Server_config_ToolStripMenuItem";
-            this.Server_config_ToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
-            this.Server_config_ToolStripMenuItem.Text = "服务配置";
+            this.Server_config_ToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
+            this.Server_config_ToolStripMenuItem.Text = "Server Config";
             this.Server_config_ToolStripMenuItem.Click += new System.EventHandler(this.Server_config_ToolStripMenuItem_Click);
             // 
             // ScriptTimer
@@ -201,7 +201,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 43);
             this.button1.TabIndex = 2;
-            this.button1.Text = "打开";
+            this.button1.Text = "Open";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.OpenFile_ToolStripMenuItem1_Click);
             // 
@@ -265,9 +265,9 @@
             this.Title_Label.Font = new System.Drawing.Font("宋体", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Title_Label.Location = new System.Drawing.Point(46, 13);
             this.Title_Label.Name = "Title_Label";
-            this.Title_Label.Size = new System.Drawing.Size(141, 15);
+            this.Title_Label.Size = new System.Drawing.Size(151, 15);
             this.Title_Label.TabIndex = 8;
-            this.Title_Label.Text = "气味播放器V2.2.1";
+            this.Title_Label.Text = "OdorPlayerV2.2.1";
             // 
             // CurrentDeviceLabel
             // 
@@ -280,7 +280,7 @@
             this.CurrentDeviceLabel.Name = "CurrentDeviceLabel";
             this.CurrentDeviceLabel.Size = new System.Drawing.Size(381, 25);
             this.CurrentDeviceLabel.TabIndex = 17;
-            this.CurrentDeviceLabel.Text = "当前设备:所有设备";
+            this.CurrentDeviceLabel.Text = "Current Device:All Devices";
             this.CurrentDeviceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -344,7 +344,7 @@
             this.xPanderPanel1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.xPanderPanel1.Size = new System.Drawing.Size(200, 50);
             this.xPanderPanel1.TabIndex = 0;
-            this.xPanderPanel1.Text = "单路控制";
+            this.xPanderPanel1.Text = "Channel Control";
             this.xPanderPanel1.ToolTipTextCloseIcon = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel1.ToolTipTextExpandIconPanelExpanded = null;
@@ -465,7 +465,7 @@
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.xPanderPanel2.Size = new System.Drawing.Size(200, 511);
             this.xPanderPanel2.TabIndex = 1;
-            this.xPanderPanel2.Text = "视频列表";
+            this.xPanderPanel2.Text = "Video List";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel2.ToolTipTextExpandIconPanelExpanded = null;
@@ -516,30 +516,6 @@
             this.dgvVideo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellContentClick);
             this.dgvVideo.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvVideo_RowPostPaint);
             // 
-            // VideoName
-            // 
-            this.VideoName.DataPropertyName = "VideoName";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.VideoName.DefaultCellStyle = dataGridViewCellStyle1;
-            this.VideoName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.VideoName.HeaderText = "视频名称";
-            this.VideoName.MinimumWidth = 100;
-            this.VideoName.Name = "VideoName";
-            this.VideoName.ReadOnly = true;
-            this.VideoName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.VideoName.Width = 140;
-            // 
-            // VideoAddr
-            // 
-            this.VideoAddr.DataPropertyName = "VideoAddr";
-            this.VideoAddr.HeaderText = "视频地址";
-            this.VideoAddr.MinimumWidth = 240;
-            this.VideoAddr.Name = "VideoAddr";
-            this.VideoAddr.ReadOnly = true;
-            this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.VideoAddr.Visible = false;
-            this.VideoAddr.Width = 240;
-            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.btnSelect);
@@ -559,7 +535,7 @@
             this.btnSelect.Size = new System.Drawing.Size(24, 24);
             this.btnSelect.TabIndex = 3;
             this.btnSelect.Text = "S";
-            this.ttMain.SetToolTip(this.btnSelect, "选择文件夹导入");
+            this.ttMain.SetToolTip(this.btnSelect, "Select Folder");
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
@@ -570,7 +546,7 @@
             this.btnClear.Size = new System.Drawing.Size(24, 24);
             this.btnClear.TabIndex = 2;
             this.btnClear.Text = "C";
-            this.ttMain.SetToolTip(this.btnClear, "清除列表");
+            this.ttMain.SetToolTip(this.btnClear, "List Clear");
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
@@ -581,7 +557,7 @@
             this.btnDel.Size = new System.Drawing.Size(24, 24);
             this.btnDel.TabIndex = 1;
             this.btnDel.Text = "-";
-            this.ttMain.SetToolTip(this.btnDel, "删除视频");
+            this.ttMain.SetToolTip(this.btnDel, "Del Video");
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
@@ -592,7 +568,7 @@
             this.btnAdd.Size = new System.Drawing.Size(24, 24);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "+";
-            this.ttMain.SetToolTip(this.btnAdd, "添加视频");
+            this.ttMain.SetToolTip(this.btnAdd, "Add Video");
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -618,7 +594,7 @@
             this.WakeUpBTN.Name = "WakeUpBTN";
             this.WakeUpBTN.Size = new System.Drawing.Size(75, 43);
             this.WakeUpBTN.TabIndex = 20;
-            this.WakeUpBTN.Text = "唤醒";
+            this.WakeUpBTN.Text = "WakeUp";
             this.WakeUpBTN.UseVisualStyleBackColor = true;
             this.WakeUpBTN.Click += new System.EventHandler(this.WakeUpBTN_Click);
             // 
@@ -631,7 +607,7 @@
             this.CycleCB.Name = "CycleCB";
             this.CycleCB.Size = new System.Drawing.Size(48, 16);
             this.CycleCB.TabIndex = 21;
-            this.CycleCB.Text = "循环";
+            this.CycleCB.Text = "Loop";
             this.CycleCB.UseVisualStyleBackColor = true;
             this.CycleCB.CheckedChanged += new System.EventHandler(this.CycleCB_CheckedChanged);
             // 
@@ -644,7 +620,7 @@
             this.ShowMC_CB.Name = "ShowMC_CB";
             this.ShowMC_CB.Size = new System.Drawing.Size(108, 16);
             this.ShowMC_CB.TabIndex = 22;
-            this.ShowMC_CB.Text = "显示视频菜单栏";
+            this.ShowMC_CB.Text = "Show Video Bar";
             this.ShowMC_CB.UseVisualStyleBackColor = true;
             this.ShowMC_CB.CheckedChanged += new System.EventHandler(this.ShowMC_CB_CheckedChanged);
             // 
@@ -657,7 +633,7 @@
             this.FastBackward_BTN.Name = "FastBackward_BTN";
             this.FastBackward_BTN.Size = new System.Drawing.Size(79, 43);
             this.FastBackward_BTN.TabIndex = 23;
-            this.FastBackward_BTN.Text = "快退";
+            this.FastBackward_BTN.Text = "Backward";
             this.FastBackward_BTN.UseVisualStyleBackColor = true;
             this.FastBackward_BTN.Click += new System.EventHandler(this.FastBackward_BTN_Click);
             // 
@@ -670,7 +646,7 @@
             this.FastForward_BTN.Name = "FastForward_BTN";
             this.FastForward_BTN.Size = new System.Drawing.Size(80, 43);
             this.FastForward_BTN.TabIndex = 24;
-            this.FastForward_BTN.Text = "快进";
+            this.FastForward_BTN.Text = "Forward";
             this.FastForward_BTN.UseVisualStyleBackColor = true;
             this.FastForward_BTN.Click += new System.EventHandler(this.FastForward_BTN_Click);
             // 
@@ -710,7 +686,7 @@
             this.lblCycTimes.Name = "lblCycTimes";
             this.lblCycTimes.Size = new System.Drawing.Size(59, 12);
             this.lblCycTimes.TabIndex = 26;
-            this.lblCycTimes.Text = "循环次数:";
+            this.lblCycTimes.Text = "Loop Num:";
             // 
             // panel4
             // 
@@ -737,6 +713,30 @@
             this.WMP.PositionChange += new AxWMPLib._WMPOCXEvents_PositionChangeEventHandler(this.WMP_PositionChange);
             this.WMP.ClickEvent += new AxWMPLib._WMPOCXEvents_ClickEventHandler(this.WMP_ClickEvent);
             this.WMP.ClientSizeChanged += new System.EventHandler(this.WMP_ClientSizeChanged);
+            // 
+            // VideoName
+            // 
+            this.VideoName.DataPropertyName = "VideoName";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.VideoName.DefaultCellStyle = dataGridViewCellStyle2;
+            this.VideoName.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.VideoName.HeaderText = "Video Name";
+            this.VideoName.MinimumWidth = 100;
+            this.VideoName.Name = "VideoName";
+            this.VideoName.ReadOnly = true;
+            this.VideoName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.VideoName.Width = 140;
+            // 
+            // VideoAddr
+            // 
+            this.VideoAddr.DataPropertyName = "VideoAddr";
+            this.VideoAddr.HeaderText = "Video Address";
+            this.VideoAddr.MinimumWidth = 240;
+            this.VideoAddr.Name = "VideoAddr";
+            this.VideoAddr.ReadOnly = true;
+            this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.VideoAddr.Visible = false;
+            this.VideoAddr.Width = 240;
             // 
             // Player
             // 

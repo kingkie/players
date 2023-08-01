@@ -77,7 +77,7 @@ namespace BroadcastPlayer
 
             DrawPlayBtn(true);
             coutdown_label2.Visible = true;
-            coutdown_label2.Text = "还剩 " + (Duration) + " 秒";
+            coutdown_label2.Text = "Rest " + (Duration) + " S";
             IsPlaying = true;
             PlaySmellThread = new Thread(() => {
                 int Countor = 0;
@@ -86,7 +86,7 @@ namespace BroadcastPlayer
                     Thread.Sleep(1000);
                     Countor++;
                     UISync.Execute(() => {
-                        coutdown_label2.Text = "还剩 "+ (Duration - Countor) + " 秒";
+                        coutdown_label2.Text = "Rest " + (Duration - Countor) + " S";
                     });
                 }
               

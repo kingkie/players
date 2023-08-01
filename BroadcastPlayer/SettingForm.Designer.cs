@@ -45,10 +45,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(11, 37);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 16);
+            this.radioButton1.Size = new System.Drawing.Size(89, 16);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "所有设备";
+            this.radioButton1.Text = "All Devices";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
@@ -57,10 +57,10 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(11, 59);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(71, 16);
+            this.radioButton2.Size = new System.Drawing.Size(113, 16);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "指定设备";
+            this.radioButton2.Text = "Selected Device";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.Click += new System.EventHandler(this.radioButton1_Click);
             // 
@@ -69,13 +69,13 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(71, 12);
             this.label1.TabIndex = 2;
-            this.label1.Text = "设备编号：";
+            this.label1.Text = "Device Id：";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(64, 5);
+            this.textBox1.Location = new System.Drawing.Point(68, 5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(77, 21);
             this.textBox1.TabIndex = 3;
@@ -88,7 +88,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 12);
             this.label2.TabIndex = 4;
-            this.label2.Text = "（如：2036）";
+            this.label2.Text = "（Eg：2036）";
             // 
             // button1
             // 
@@ -99,7 +99,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
-            this.button1.Text = "取消";
+            this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -113,7 +113,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
-            this.button2.Text = "确定";
+            this.button2.Text = "OK";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -127,7 +127,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 30);
             this.label3.TabIndex = 10;
-            this.label3.Text = "选择设备";
+            this.label3.Text = "Select Device";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1

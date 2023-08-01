@@ -40,7 +40,7 @@ namespace BroadcastPlayer
                 new Rectangle(0, 0, this.Width, this.Height));
 
             Font font = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            String Text = "正在处理中。。。";
+            String Text = "Processing。。。";
             SizeF size = e.Graphics.MeasureString(Text, font);
             e.Graphics.DrawString(Text, font,Brushes.White,new PointF( (this.Width - size.Width)/2, (this.Height - size.Height) / 2) );
 

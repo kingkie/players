@@ -32,11 +32,11 @@ namespace BroadcastPlayer.Forms
             txtPort.Text = ServerManager.CreateInstance().ServerPort.ToString();
             if (ServerManager.CreateInstance().IsServerRunning)
             {
-                btnService.Text = "停止服务";
+                btnService.Text = "Stop";
             }
             else
             {
-                btnService.Text = "开启服务";
+                btnService.Text = "Start";
             }
             dgvVideo.DataSource = new BindingList<VideoInfo>(ServerManager.CreateInstance().VideoList);
         }
@@ -64,14 +64,14 @@ namespace BroadcastPlayer.Forms
             IPAddress ipServer = null;
             if(!IPAddress.TryParse(cboServerIP.Text,out ipServer))
             {
-                MessageBox.Show("请选择正确的服务IP！");
+                MessageBox.Show("Select IP！");
                 return;
             }
 
             int serverPort = int.Parse(txtPort.Text);
             if(!(serverPort > 0 && serverPort < 65535))
             {
-                MessageBox.Show("请设置正确的服务端口号！");
+                MessageBox.Show("Select Port！");
                 return;
             }
 
@@ -81,11 +81,11 @@ namespace BroadcastPlayer.Forms
             ServerManager.CreateInstance().RunAndStopServer();
             if(ServerManager.CreateInstance().IsServerRunning)
             {
-                btnService.Text = "停止服务";
+                btnService.Text = "Stop";
             }
             else
             {
-                btnService.Text = "开启服务";
+                btnService.Text = "Start";
             }
         }
 
@@ -93,7 +93,7 @@ namespace BroadcastPlayer.Forms
         {
             using (OpenFileDialog fileDialog = new OpenFileDialog())
             {
-                fileDialog.Filter = "视频文件(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
+                fileDialog.Filter = "Video File(*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm)|*.mp4;*.avi;*.wmv;*.rmvb;*.3gp;*.rm|(All file(*.*)|*.*";
                 if (fileDialog.ShowDialog() == DialogResult.OK)
                 {
                     string fileName = fileDialog.SafeFileName;
@@ -115,7 +115,7 @@ namespace BroadcastPlayer.Forms
             IPAddress ipServer = null;
             if (!IPAddress.TryParse(cboServerIP.Text.Trim(), out ipServer))
             {
-                MessageBox.Show("请选择正确的服务IP！");
+                MessageBox.Show("Please select the correct service IP！");
                 return;
             }
             else
@@ -126,7 +126,7 @@ namespace BroadcastPlayer.Forms
             int serverPort = int.Parse(txtPort.Text);
             if (!(serverPort > 0 && serverPort < 65535))
             {
-                MessageBox.Show("请设置正确的服务端口号！");
+                MessageBox.Show("Please set the correct service port！");
                 return;
             }
             else
@@ -147,7 +147,7 @@ namespace BroadcastPlayer.Forms
 
             if( ServerManager.CreateInstance().SaveConfig())
             {
-                MessageBox.Show("保存配置成功！");
+                MessageBox.Show("Successfully saved！");
             }
         }
 
@@ -155,7 +155,7 @@ namespace BroadcastPlayer.Forms
         {
             if(dgvVideo.SelectedRows.Count < 1)
             {
-                MessageBox.Show("请选择要删除的行！");
+                MessageBox.Show("Please Select Row！");
             }
             var vInfo =  this.dgvVideo.CurrentRow.DataBoundItem as VideoInfo;
 

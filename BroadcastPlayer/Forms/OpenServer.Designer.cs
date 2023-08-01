@@ -37,13 +37,13 @@ namespace BroadcastPlayer.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvVideo = new System.Windows.Forms.DataGridView();
-            this.VideoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.VideoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VideoAddr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlCmd.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVideo)).BeginInit();
@@ -60,7 +60,7 @@ namespace BroadcastPlayer.Forms
             this.pnlCmd.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlCmd.Location = new System.Drawing.Point(0, 281);
             this.pnlCmd.Name = "pnlCmd";
-            this.pnlCmd.Size = new System.Drawing.Size(548, 85);
+            this.pnlCmd.Size = new System.Drawing.Size(580, 85);
             this.pnlCmd.TabIndex = 0;
             // 
             // cboServerIP
@@ -70,20 +70,20 @@ namespace BroadcastPlayer.Forms
             this.cboServerIP.FormattingEnabled = true;
             this.cboServerIP.Items.AddRange(new object[] {
             "127.0.0.1"});
-            this.cboServerIP.Location = new System.Drawing.Point(71, 31);
+            this.cboServerIP.Location = new System.Drawing.Point(84, 31);
             this.cboServerIP.Name = "cboServerIP";
-            this.cboServerIP.Size = new System.Drawing.Size(151, 24);
+            this.cboServerIP.Size = new System.Drawing.Size(138, 24);
             this.cboServerIP.TabIndex = 7;
             // 
             // btnService
             // 
             this.btnService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnService.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnService.Location = new System.Drawing.Point(399, 22);
+            this.btnService.Location = new System.Drawing.Point(431, 22);
             this.btnService.Name = "btnService";
             this.btnService.Size = new System.Drawing.Size(137, 43);
             this.btnService.TabIndex = 9;
-            this.btnService.Text = "启动服务";
+            this.btnService.Text = "Start";
             this.btnService.UseVisualStyleBackColor = true;
             this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
@@ -91,7 +91,7 @@ namespace BroadcastPlayer.Forms
             // 
             this.txtPort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtPort.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtPort.Location = new System.Drawing.Point(303, 30);
+            this.txtPort.Location = new System.Drawing.Point(330, 30);
             this.txtPort.Name = "txtPort";
             this.txtPort.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPort.Size = new System.Drawing.Size(56, 26);
@@ -106,21 +106,21 @@ namespace BroadcastPlayer.Forms
             this.label2.Location = new System.Drawing.Point(225, 35);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(80, 16);
+            this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 6;
-            this.label2.Text = "服务端口:";
+            this.label2.Text = "Server Port:";
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(10, 35);
+            this.label1.Location = new System.Drawing.Point(9, 35);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 5;
-            this.label1.Text = "服务IP:";
+            this.label1.Text = "ServerIP:";
             // 
             // groupBox1
             // 
@@ -129,10 +129,10 @@ namespace BroadcastPlayer.Forms
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(548, 281);
+            this.groupBox1.Size = new System.Drawing.Size(580, 281);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "视频列表";
+            this.groupBox1.Text = "Video List";
             // 
             // dgvVideo
             // 
@@ -147,26 +147,8 @@ namespace BroadcastPlayer.Forms
             this.dgvVideo.Name = "dgvVideo";
             this.dgvVideo.RowTemplate.Height = 23;
             this.dgvVideo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVideo.Size = new System.Drawing.Size(441, 261);
+            this.dgvVideo.Size = new System.Drawing.Size(473, 261);
             this.dgvVideo.TabIndex = 1;
-            // 
-            // VideoName
-            // 
-            this.VideoName.DataPropertyName = "VideoName";
-            this.VideoName.HeaderText = "视频名称";
-            this.VideoName.MinimumWidth = 100;
-            this.VideoName.Name = "VideoName";
-            this.VideoName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.VideoName.Width = 120;
-            // 
-            // VideoAddr
-            // 
-            this.VideoAddr.DataPropertyName = "VideoAddr";
-            this.VideoAddr.HeaderText = "视频地址";
-            this.VideoAddr.MinimumWidth = 240;
-            this.VideoAddr.Name = "VideoAddr";
-            this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.VideoAddr.Width = 240;
             // 
             // panel1
             // 
@@ -175,7 +157,7 @@ namespace BroadcastPlayer.Forms
             this.panel1.Controls.Add(this.btnEdit);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(444, 17);
+            this.panel1.Location = new System.Drawing.Point(476, 17);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(101, 261);
             this.panel1.TabIndex = 0;
@@ -186,7 +168,7 @@ namespace BroadcastPlayer.Forms
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(85, 35);
             this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "保存设置";
+            this.btnSave.Text = "Save Config";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -196,7 +178,7 @@ namespace BroadcastPlayer.Forms
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 35);
             this.btnDel.TabIndex = 2;
-            this.btnDel.Text = "删 除";
+            this.btnDel.Text = "DEL";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
@@ -206,7 +188,7 @@ namespace BroadcastPlayer.Forms
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 35);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "修 改";
+            this.btnEdit.Text = "EDIT";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -217,22 +199,40 @@ namespace BroadcastPlayer.Forms
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 35);
             this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "添 加";
+            this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // VideoName
+            // 
+            this.VideoName.DataPropertyName = "VideoName";
+            this.VideoName.HeaderText = "Video Name";
+            this.VideoName.MinimumWidth = 100;
+            this.VideoName.Name = "VideoName";
+            this.VideoName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.VideoName.Width = 120;
+            // 
+            // VideoAddr
+            // 
+            this.VideoAddr.DataPropertyName = "VideoAddr";
+            this.VideoAddr.HeaderText = "Video Path";
+            this.VideoAddr.MinimumWidth = 240;
+            this.VideoAddr.Name = "VideoAddr";
+            this.VideoAddr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.VideoAddr.Width = 240;
             // 
             // OpenServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 366);
+            this.ClientSize = new System.Drawing.Size(580, 366);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pnlCmd);
             this.Name = "OpenServer";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "服务配置";
+            this.Text = "Server Config";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.OpenServer_Load);
             this.pnlCmd.ResumeLayout(false);
