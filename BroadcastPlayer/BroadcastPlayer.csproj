@@ -81,10 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppManager.cs" />
+    <Compile Include="Devices\DeviceExtendHelper.cs" />
     <Compile Include="Models\VideoInfo.cs" />
     <Compile Include="Models\PlayList.cs" />
-    <Compile Include="ServerConfig.cs" />
-    <Compile Include="ServerManager.cs" />
+    <Compile Include="Devices\NeckWearManager.cs" />
+    <Compile Include="Servers\ServerConfig.cs" />
+    <Compile Include="Servers\ServerManager.cs" />
     <Compile Include="Define.cs" />
     <Compile Include="Forms\OpenServer.cs">
       <SubType>Form</SubType>
@@ -114,7 +116,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proto2Device.cs" />
+    <Compile Include="Devices\Proto2Device.cs" />
     <Compile Include="Runtime\DataStructrues\ADPlayerSerialPort.cs" />
     <Compile Include="Runtime\DataStructrues\ControllerSerialPort.cs" />
     <Compile Include="Runtime\DataStructrues\DataPackage.cs" />
@@ -143,6 +145,7 @@
     <Compile Include="UserMasker.Designer.cs">
       <DependentUpon>UserMasker.cs</DependentUpon>
     </Compile>
+    <Compile Include="Devices\XiaoboServer.cs" />
     <EmbeddedResource Include="Forms\OpenServer.resx">
       <DependentUpon>OpenServer.cs</DependentUpon>
     </EmbeddedResource>

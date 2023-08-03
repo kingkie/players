@@ -136,6 +136,12 @@ namespace BroadcastPlayer
                 ServerManager.CreateInstance().RunAndStopServer();
             }
 
+            //开启向外部设备输送指令
+            if(Runtime.UsedPeripheral)
+            {
+                DeviceExtendHelper.CreateInstance().Init();
+            }
+
             //Runtime.SaveToXMLFile(RuntimeFile);
         }
 
@@ -170,11 +176,6 @@ namespace BroadcastPlayer
                     break;
             }
             base.WndProc(ref m);
-        }
-
-        private void Fffff_Tick(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private object obj = new object();
@@ -256,6 +257,8 @@ namespace BroadcastPlayer
                     if (RestMilliSecond > 500)
                     {
                         PlaySmell(sds.smellID, (UInt32)RestMilliSecond, Default_ChannelID);
+
+                        XiaoboPlay(sds.smellID, RestMilliSecond / 1000);
                     }
                     CurrentPauseBlock = null;
                 }
@@ -673,6 +676,8 @@ namespace BroadcastPlayer
                             Int32 Duration = Convert.ToInt32(numericUpDown1.Value);
                             psb.PerformencePlaySmell(Duration);
                             OnlyPlaySmell_AD(psb.SmellID, Duration);
+
+                            XiaoboPlay(psb.SmellID, Duration);
                         }
                         else
                             ShowErrorMSG("设备未连接", 12000);
@@ -686,6 +691,8 @@ namespace BroadcastPlayer
                             Int32 Duration = Convert.ToInt32(numericUpDown1.Value);
                             psb.PerformencePlaySmell(Duration);
                             OnlyPlaySmell(psb.SmellID, (UInt32)(Duration * 1000), Default_ChannelID);
+
+                            XiaoboPlay(psb.SmellID, Duration);
                         }
                     }
                     else if (Runtime.DeviceType == DeviceTypeEnum.DTE_BLE_Module)
@@ -706,6 +713,8 @@ namespace BroadcastPlayer
                 playSmellBtn1.StopButtonClick += (object sender, EventArgs e) =>
                 {
                     SendStopPlay();
+
+                    XiaoboStop();
                 };
 
                 Container.Controls.Add(playSmellBtn1);
@@ -1038,7 +1047,7 @@ namespace BroadcastPlayer
                     {
                         Tools.TLog("manual stop");
                         SendStopPlay();
-
+                        XiaoboStop();
                         IsPlayingSmell = false;
 
                         if (null != CheckPlayingThread && CheckPlayingThread.IsAlive)
@@ -1233,6 +1242,11 @@ namespace BroadcastPlayer
         private void Player_FormClosing(object sender, FormClosingEventArgs e)
         {
             SendStopPlay();
+            XiaoboStop();
+            if(Runtime.UsedPeripheral)
+            {
+                DeviceExtendHelper.CreateInstance().DisConnect();
+            }
             Environment.Exit(0);
         }
 
@@ -1815,6 +1829,28 @@ namespace BroadcastPlayer
             }
         }
 
+        #region 外部通信
+
+        private void XiaoboPlay(int smellid, int duration)
+        {
+            if (this.Runtime.UsedPeripheral)
+            {
+                DeviceExtendHelper.CreateInstance().PlaySmell(smellid, duration);
+            }
+        }
+
+        private void XiaoboStop()
+        {
+            if (this.Runtime.UsedPeripheral)
+            {
+                DeviceExtendHelper.CreateInstance().StopPlay();
+            }
+        }
+
+        #endregion End
+
+        #region 播放列表操作
+
         private void dgvVideo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -1937,6 +1973,8 @@ namespace BroadcastPlayer
             SolidBrush b = new SolidBrush(this.dgvVideo.RowHeadersDefaultCellStyle.ForeColor);
             e.Graphics.DrawString((e.RowIndex + 1).ToString(System.Globalization.CultureInfo.CurrentUICulture), this.dgvVideo.DefaultCellStyle.Font, b, e.RowBounds.Location.X + 10, e.RowBounds.Location.Y + 4);
         }
+
+        #endregion End
     }
 
     public class BPDevice {
@@ -1956,7 +1994,7 @@ namespace BroadcastPlayer
 
     public class BPRuntime
     {
-        public Int32 GasCircuitCount { get; set; } = 12;
+        public int GasCircuitCount { get; set; } = 12;
 
         public String LastPlayVideo { get; set; }
 
@@ -2003,6 +2041,15 @@ namespace BroadcastPlayer
             get;
             set;
         }
+
+        /// <summary>
+        /// 是否启用外部设备
+        /// </summary>
+        public bool UsedPeripheral
+        {
+            get;
+            set;
+        } = false;
 
         public BPRuntime()
         {

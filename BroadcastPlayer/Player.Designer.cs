@@ -108,7 +108,7 @@
             this.TOPmenuStrip1.Name = "TOPmenuStrip1";
             this.TOPmenuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 121, 2);
             this.TOPmenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.TOPmenuStrip1.Size = new System.Drawing.Size(900, 39);
+            this.TOPmenuStrip1.Size = new System.Drawing.Size(1024, 39);
             this.TOPmenuStrip1.TabIndex = 1;
             this.TOPmenuStrip1.Text = "menuStrip1";
             this.TOPmenuStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.TOPmenuStrip1_Paint);
@@ -197,7 +197,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(536, 12);
+            this.button1.Location = new System.Drawing.Point(660, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 43);
             this.button1.TabIndex = 2;
@@ -211,7 +211,7 @@
             this.g_Min_Btn.FlatAppearance.BorderSize = 0;
             this.g_Min_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g_Min_Btn.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.g_Min_Btn.Location = new System.Drawing.Point(779, 2);
+            this.g_Min_Btn.Location = new System.Drawing.Point(903, 2);
             this.g_Min_Btn.Name = "g_Min_Btn";
             this.g_Min_Btn.Size = new System.Drawing.Size(40, 38);
             this.g_Min_Btn.TabIndex = 3;
@@ -225,7 +225,7 @@
             this.g_Max_Btn.FlatAppearance.BorderSize = 0;
             this.g_Max_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g_Max_Btn.Font = new System.Drawing.Font("黑体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.g_Max_Btn.Location = new System.Drawing.Point(819, 2);
+            this.g_Max_Btn.Location = new System.Drawing.Point(943, 2);
             this.g_Max_Btn.Name = "g_Max_Btn";
             this.g_Max_Btn.Size = new System.Drawing.Size(40, 38);
             this.g_Max_Btn.TabIndex = 4;
@@ -239,7 +239,7 @@
             this.g_Close_Btn.FlatAppearance.BorderSize = 0;
             this.g_Close_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.g_Close_Btn.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.g_Close_Btn.Location = new System.Drawing.Point(859, 2);
+            this.g_Close_Btn.Location = new System.Drawing.Point(983, 2);
             this.g_Close_Btn.Name = "g_Close_Btn";
             this.g_Close_Btn.Size = new System.Drawing.Size(40, 38);
             this.g_Close_Btn.TabIndex = 5;
@@ -278,7 +278,7 @@
             this.CurrentDeviceLabel.ForeColor = System.Drawing.Color.DimGray;
             this.CurrentDeviceLabel.Location = new System.Drawing.Point(248, 7);
             this.CurrentDeviceLabel.Name = "CurrentDeviceLabel";
-            this.CurrentDeviceLabel.Size = new System.Drawing.Size(381, 25);
+            this.CurrentDeviceLabel.Size = new System.Drawing.Size(505, 25);
             this.CurrentDeviceLabel.TabIndex = 17;
             this.CurrentDeviceLabel.Text = "当前设备:所有设备";
             this.CurrentDeviceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -289,9 +289,9 @@
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.xPanderPanelList1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(700, 39);
+            this.panel1.Location = new System.Drawing.Point(824, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 561);
+            this.panel1.Size = new System.Drawing.Size(200, 601);
             this.panel1.TabIndex = 18;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -308,7 +308,7 @@
             this.xPanderPanelList1.PanelColors = null;
             this.xPanderPanelList1.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
             this.xPanderPanelList1.ShowBorder = false;
-            this.xPanderPanelList1.Size = new System.Drawing.Size(200, 561);
+            this.xPanderPanelList1.Size = new System.Drawing.Size(200, 601);
             this.xPanderPanelList1.TabIndex = 15;
             // 
             // xPanderPanel1
@@ -463,7 +463,7 @@
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel2.Size = new System.Drawing.Size(200, 511);
+            this.xPanderPanel2.Size = new System.Drawing.Size(200, 551);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "视频列表";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -476,7 +476,7 @@
             this.pnlVideoList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlVideoList.Location = new System.Drawing.Point(1, 50);
             this.pnlVideoList.Name = "pnlVideoList";
-            this.pnlVideoList.Size = new System.Drawing.Size(198, 461);
+            this.pnlVideoList.Size = new System.Drawing.Size(198, 501);
             this.pnlVideoList.TabIndex = 0;
             // 
             // tblVideos
@@ -491,7 +491,7 @@
             this.tblVideos.RowCount = 2;
             this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tblVideos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblVideos.Size = new System.Drawing.Size(198, 461);
+            this.tblVideos.Size = new System.Drawing.Size(198, 501);
             this.tblVideos.TabIndex = 3;
             // 
             // dgvVideo
@@ -511,7 +511,7 @@
             this.dgvVideo.RowTemplate.Height = 23;
             this.dgvVideo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvVideo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVideo.Size = new System.Drawing.Size(182, 405);
+            this.dgvVideo.Size = new System.Drawing.Size(182, 445);
             this.dgvVideo.TabIndex = 2;
             this.dgvVideo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVideo_CellContentClick);
             this.dgvVideo.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvVideo_RowPostPaint);
@@ -614,7 +614,7 @@
             this.WakeUpBTN.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.WakeUpBTN.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.WakeUpBTN.Location = new System.Drawing.Point(616, 12);
+            this.WakeUpBTN.Location = new System.Drawing.Point(740, 12);
             this.WakeUpBTN.Name = "WakeUpBTN";
             this.WakeUpBTN.Size = new System.Drawing.Size(75, 43);
             this.WakeUpBTN.TabIndex = 20;
@@ -627,7 +627,7 @@
             this.CycleCB.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CycleCB.AutoSize = true;
-            this.CycleCB.Location = new System.Drawing.Point(485, 25);
+            this.CycleCB.Location = new System.Drawing.Point(609, 25);
             this.CycleCB.Name = "CycleCB";
             this.CycleCB.Size = new System.Drawing.Size(48, 16);
             this.CycleCB.TabIndex = 21;
@@ -686,16 +686,16 @@
             this.panel3.Controls.Add(this.ShowMC_CB);
             this.panel3.Controls.Add(this.CycleCB);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 534);
+            this.panel3.Location = new System.Drawing.Point(0, 574);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(700, 66);
+            this.panel3.Size = new System.Drawing.Size(824, 66);
             this.panel3.TabIndex = 25;
             // 
             // txtCycTimes
             // 
             this.txtCycTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCycTimes.Location = new System.Drawing.Point(441, 23);
+            this.txtCycTimes.Location = new System.Drawing.Point(565, 23);
             this.txtCycTimes.Name = "txtCycTimes";
             this.txtCycTimes.Size = new System.Drawing.Size(39, 21);
             this.txtCycTimes.TabIndex = 25;
@@ -706,7 +706,7 @@
             this.lblCycTimes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCycTimes.AutoSize = true;
-            this.lblCycTimes.Location = new System.Drawing.Point(382, 27);
+            this.lblCycTimes.Location = new System.Drawing.Point(506, 27);
             this.lblCycTimes.Name = "lblCycTimes";
             this.lblCycTimes.Size = new System.Drawing.Size(59, 12);
             this.lblCycTimes.TabIndex = 26;
@@ -719,7 +719,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 39);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(700, 495);
+            this.panel4.Size = new System.Drawing.Size(824, 535);
             this.panel4.TabIndex = 26;
             // 
             // WMP
@@ -731,7 +731,7 @@
             this.WMP.Name = "WMP";
             this.WMP.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WMP.OcxState")));
             this.WMP.Padding = new System.Windows.Forms.Padding(0, 0, 179, 0);
-            this.WMP.Size = new System.Drawing.Size(700, 495);
+            this.WMP.Size = new System.Drawing.Size(824, 535);
             this.WMP.TabIndex = 0;
             this.WMP.StatusChange += new System.EventHandler(this.WMP_StatusChange);
             this.WMP.PositionChange += new AxWMPLib._WMPOCXEvents_PositionChangeEventHandler(this.WMP_PositionChange);
@@ -742,7 +742,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(1024, 640);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
