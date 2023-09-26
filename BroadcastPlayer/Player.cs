@@ -276,11 +276,11 @@ namespace BroadcastPlayer
             // 显示当前设备信息
             if (Runtime.UsingAllDevice)
             {
-                CurrentDeviceLabel.Text = "Current Device:All Devices";
+                CurrentDeviceLabel.Text = "Current Status: Control All Devices";
             }
             else
             {
-                CurrentDeviceLabel.Text = "Current Device:" + Runtime.CurrentDevice.ToString().PadLeft(4, '0');
+                CurrentDeviceLabel.Text = "Current Status:" + Runtime.CurrentDevice.ToString().PadLeft(4, '0');
             }
 
             AdjustStep = Runtime.AdjustStep;
@@ -415,9 +415,6 @@ namespace BroadcastPlayer
                     if (Ret)
                         return Ret;
                 }
-
-
-
 
                 DisConnect_ADP_ToolStripMenuItem_Click(DisConnect_ADP_ToolStripMenuItem, null);
                 if (ShowMsg)
@@ -1094,7 +1091,7 @@ namespace BroadcastPlayer
         private void AutoConnect_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] ButtonText = new String[] {
-                "Connect Controller",
+                "Connect Dongle",
                 "Connecting"
             };
 
@@ -1150,7 +1147,7 @@ namespace BroadcastPlayer
             ToolStripMenuItem ThisTSMI = sender as ToolStripMenuItem;
             ToolStripMenuItem MainTSMI = AutoConnect_ToolStripMenuItem;
             String[] ButtonText = new String[] {
-                "Connect Controller",
+                "Connect Dongle",
                 "Connecting"
             };
             if (MainTSMI.Text != ButtonText[0])
@@ -1354,7 +1351,7 @@ namespace BroadcastPlayer
 
                 if (null == _sender)
                 {
-                    CurrentDeviceLabel.Text = "Current Device:All Devices";
+                    CurrentDeviceLabel.Text = "Current Status: Control All Devices";
 
                     Runtime.UsingAllDevice = true;
                     Runtime.SaveToXMLFile(RuntimeFile);
@@ -1409,7 +1406,7 @@ namespace BroadcastPlayer
                         M_SetDeviceChannel(CurrentDeviceUID, CurrentDeviceChannel, () =>
                         {
                             UISync.Execute(() => {
-                                CurrentDeviceLabel.Text = "Current Device:" + CurrentDeviceID.ToString().PadLeft(4, '0');
+                                CurrentDeviceLabel.Text = "Current Status:" + CurrentDeviceID.ToString().PadLeft(4, '0');
                             });
                             Runtime.UsingAllDevice = false;
                             Runtime.CurrentDevice = CurrentDeviceID;
@@ -1424,7 +1421,7 @@ namespace BroadcastPlayer
                             M_SetDeviceChannel(CurrentDeviceUID, CurrentDeviceChannel, () =>
                             {
                                 UISync.Execute(() => {
-                                    CurrentDeviceLabel.Text = "Current Device:" + CurrentDeviceID.ToString().PadLeft(4, '0');
+                                    CurrentDeviceLabel.Text = "Current Status:" + CurrentDeviceID.ToString().PadLeft(4, '0');
                                 });
                                 Runtime.UsingAllDevice = false;
                                 Runtime.CurrentDevice = CurrentDeviceID;
@@ -1566,7 +1563,7 @@ namespace BroadcastPlayer
         private void Connect_ADP_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             String[] ButtonText = new String[] {
-                "Connect Device",
+                "Connect Dongle",
                 "Connecting"
             };
 
@@ -1612,7 +1609,7 @@ namespace BroadcastPlayer
             ToolStripMenuItem ThisTSMI = sender as ToolStripMenuItem;
             ToolStripMenuItem MainTSMI = Connect_ADP_ToolStripMenuItem;
             String[] ButtonText = new String[] {
-                "Connect Device",
+                "Connect Dongle",
                 "Connecting"
             };
             if (MainTSMI.Text != ButtonText[0])
@@ -2032,7 +2029,6 @@ namespace BroadcastPlayer
                 bpd.UID = UID;
                 Devices.Add(bpd);
             }
- 
         }
 
 
